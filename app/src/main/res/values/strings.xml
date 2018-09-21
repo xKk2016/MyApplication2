@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">My Application2</string>
+    <string name="reset">Reset</string>
+    <string name="team_a">Team A</string>
+    <string name="zero">0</string>
+    <string name="add1">+1 POINT</string>
+    <string name="add2">+2 POINT</string>
+    <string name="add3">+3 POINT</string>
+    <string name="team_b">Team B</string>
+</resources>

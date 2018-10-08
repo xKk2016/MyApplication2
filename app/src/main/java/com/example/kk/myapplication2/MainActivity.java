@@ -7,6 +7,28 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        TextView point_a = findViewById(R.id.point_a);
+        TextView point_b = findViewById(R.id.point_b);
+        String score_a = point_a.getText().toString();
+        String score_b = point_b.getText().toString();
+
+        outState.putString("score_a",score_a);
+        outState.putString("score_b",score_b);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        TextView point_a = findViewById(R.id.point_a);
+        TextView point_b = findViewById(R.id.point_b);
+        point_a.setText(savedInstanceState.getString("score_a"));
+        point_b.setText(savedInstanceState.getString("score_b"));
+
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
         Button reset = findViewById(R.id.reset);
 
         Button adda_1 = findViewById(R.id.adda_1);
+
+
+
         adda_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
